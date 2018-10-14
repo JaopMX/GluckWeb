@@ -1,0 +1,48 @@
+.btn-large{
+    border-radius: 30px;
+}
+header {
+    height: calc(100% - 117px);
+    background: url('/img/banner_index.jpg') no-repeat;
+    background-size: 100% auto;
+    background-position-y: 50%;
+}
+div#aux-container {
+    
+    height: 100%;
+    background-color: rgba(40,47,67,.7);
+    color: #fff;
+    padding-top: 2%;
+    padding-bottom: 4%;
+}
+body{
+    font-family: 'Mali', sans-serif, Bold !important;
+}
+#responsive-img{
+    width: 100%;
+    height: auto;
+}
+@media only screen and (max-width : 1024px){
+    #footer{
+        position: -webkit-sticky;
+        position: sticky;    
+        top: calc(100% - 181px);
+        z-index: 12;
+    }
+    #benefits{
+        padding-bottom:158px;
+    }
+    }
+    @media only screen and (min-width : 1224px) {
+    #footer{
+        position: -webkit-sticky;
+        position: sticky;
+        top: calc(100% - 130px);
+        padding-top: 10px;
+        padding-bottom: 5px;
+        z-index: 12;
+    }
+    #benefits{
+        padding-bottom:98px;
+    }   
+    }
