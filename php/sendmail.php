@@ -1,8 +1,9 @@
 <?php
+
 if(isset($_POST['email'])) {
- 
+    
     // EDIT THE 2 LINES BELOW AS REQUIRED
-    $email_to = "jaop.7@outlook.com";
+    $email_to = "karla@eventosgluck.com.mx";
     $email_subject = "Solicitud de informacion en Página de Gluck";
  
     function died($error) {
@@ -31,7 +32,7 @@ if(isset($_POST['email'])) {
     $email_from = $_POST['email']; // required
     $message = $_POST['message']; // not required
     $eventDate = $_POST['eventDate']; // required
- 
+
     $error_message = "";
     $email_exp = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';
  
@@ -39,11 +40,11 @@ if(isset($_POST['email'])) {
     $error_message .= 'The Email Address you entered does not appear to be valid.<br />';
   }
  
-    $string_exp = "/^[A-Za-z .'-]+$/";
+  // $string_exp = "/^[A-Za-z .'-]+$/";
  
-  if(!preg_match($string_exp,$name)) {
-    $error_message .= 'The First Name you entered does not appear to be valid.<br />';
-  }
+  // if(!preg_match($string_exp,$name)) {
+  //   $error_message .= 'The First Name you entered does not appear to be valid.<br />';
+  // }
  
 //   if(!preg_match($string_exp,$last_name)) {
 //     $error_message .= 'The Last Name you entered does not appear to be valid.<br />';
@@ -56,10 +57,8 @@ if(isset($_POST['email'])) {
 //   if(strlen($error_message) > 0) {
 //     died($error_message);
 //   }
+    $email_message = "Datos del contacto:\n\n";
  
-    $email_message = "Datos enviados en forma de Página:.\n\n";
- 
-     
     function clean_string($string) {
       $bad = array("content-type","bcc:","to:","cc:","href");
       return str_replace($bad,"",$string);
@@ -77,7 +76,7 @@ if(isset($_POST['email'])) {
 $headers = 'From: '.$email_from."\r\n".
 'Reply-To: '.$email_from."\r\n" .
 'X-Mailer: PHP/' . phpversion();
-@mail($email_to, $email_subject, $email_message, $headers);  
+mail($email_to, $email_subject, $email_message, $headers);  
 ?>
  
 <!-- include your own success html here -->
